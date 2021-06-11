@@ -1,5 +1,5 @@
-// Дефолтный импорт (Имя выбирается самостоятельно)
-import render from './common.js';
+// Дефолтный импорт (Имя выбирается самостоятельно) "Подключение именнованного и дефолтного"
+import render, {renderDates} from './common.js';
 // Импорт нескольких элементов (Имя указывается то, которое используется в экспорте)
 import { diffDates } from './date.js';
 
@@ -21,4 +21,6 @@ form.addEventListener('submit', (evt) => {
     render('');
     console.log(diffDates(date1, date2));
 
+    const result = diffDates(date1, date2);
+    renderDates(result);
 });
