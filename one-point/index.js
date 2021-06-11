@@ -26,27 +26,37 @@ function loadScriptArr(src, callback) {
     });
 }
 
+function loadScriptCallBack(callback){
+    const src = ['./common.js', './timer.js', './a.js']
+    src.forEach((el) => {
+        const script = document.createElement('script');
+        script.src = el;
+        // Три раза обработался callback
+        script.onload = callback;
+        document.head.insertAdjacentElement('beforeend', script);
+    });
+}
+
 // Домашнее задание №1 рассмотреть три варинта реализации loadScript, при условии,
 // что в src хранятся несколько ссылок, либо вообще массив
 
-
+/*
 // Вариант с массивом
 loadScriptArr(['./common.js', './timer.js', './a.js'], () => {
     console.log('loadScriptArr');
+});*/
+
+
+// Вариант с callback
+loadScriptCallBack(() => {
+    console.log('loadCallBack');
 });
 
 /*
-// Вариант с callback
-loadScriptCallBack(() => {
-
-});
-
-
 // Вариант со строкой
 loadScript('./common.js', () => {
     // Функция, которая находится в common.js
     log();
 
     console.log('index.js');
-});
-*/
+});*/
