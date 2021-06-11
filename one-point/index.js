@@ -67,7 +67,12 @@ loadScript('./common.js', () => {
 });*/
 
 
-
+/**
+ * Функция на проверку повторяемости (если надо добавить какой-то script c src, то
+ * используй для проверки)
+ * @param {string} replay передаваемый src для проверки 
+ * @returns {boolean} возврат true, если повторений нет, false - есть повторения
+ */
 function checkReplay(replay) {
     // Выделяем все теги script в head
     const scriptArr = document.head.getElementsByTagName('script');
@@ -80,5 +85,5 @@ function checkReplay(replay) {
             break;
         }
     }
-    return check
+    return check;
 }
