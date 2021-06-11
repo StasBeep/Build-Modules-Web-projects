@@ -18,24 +18,15 @@ function loadScript(src, callback) {
 
 function loadScriptArr(src, callback) {
     src.forEach((el) => {
-        // Выделяем все теги script в head
-        const scriptArr = document.head.getElementsByTagName('script');
 
-        let check = true;
+        const check = checkReplay(el);
 
-        for (let i = 0; i < scriptArr.length; i++) {
-            if (scriptArr[i].attributes[0].nodeValue == el) {
-                check = false;
-                break;
-            }
-        }
-
-        if(check) {
-        const script = document.createElement('script');
-        script.src = el;
-        // Три раза обработался callback
-        script.onload = callback;
-        document.head.insertAdjacentElement('beforeend', script);
+        if (check) {
+            const script = document.createElement('script');
+            script.src = el;
+            // Три раза обработался callback
+            script.onload = callback;
+            document.head.insertAdjacentElement('beforeend', script);
         }
     });
 }
@@ -56,7 +47,7 @@ function loadScriptCallBack(callback) {
 
 
 // Вариант с массивом
-loadScriptArr(['./a.js', './common.js', './timer.js', './common.js', './b.js'], () => {
+loadScriptArr(['./common.js', './timer.js', './a.js', './common.js', './b.js'], () => {
     console.log('loadScriptArr');
 });
 
@@ -74,3 +65,20 @@ loadScript('./common.js', () => {
 
     console.log('index.js');
 });*/
+
+
+
+function checkReplay(replay) {
+    // Выделяем все теги script в head
+    const scriptArr = document.head.getElementsByTagName('script');
+
+    let check = true;
+
+    for (let i = 0; i < scriptArr.length; i++) {
+        if (scriptArr[i].attributes[0].nodeValue == replay) {
+            check = false;
+            break;
+        }
+    }
+    return check
+}
