@@ -1,4 +1,7 @@
+// Дефолтный импорт (Имя выбирается самостоятельно)
 import render from './common.js';
+// Импорт нескольких элементов (Имя указывается то, которое используется в экспорте)
+import { diffDates } from './date.js';
 
 const form = document.getElementById('form-date');
 
@@ -16,4 +19,6 @@ form.addEventListener('submit', (evt) => {
     }
 
     render('');
+    console.log(diffDates(date1, date2));
+
 });
