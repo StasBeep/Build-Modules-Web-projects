@@ -1,3 +1,6 @@
+import {
+    form
+} from './shifting.js';
 // Дефолтный импорт (Имя выбирается самостоятельно) "Подключение именнованного и дефолтного"
 // as rend - переименование функции, если есть похожее
 // "* as |__| - импортировать всё в объект (работает через .)
@@ -8,8 +11,6 @@ import render, {
 import {
     diffDates
 } from './date.js';
-
-const form = document.getElementById('form-date');
 
 form.addEventListener('submit', (evt) => {
     evt.preventDefault();
