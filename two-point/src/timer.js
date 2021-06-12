@@ -13,6 +13,9 @@ const mes = document.getElementsByClassName('message-error')[0];
 
 // console.log(buttonStart, buttonEnd);
 
+/**
+ * Реакция на нажатие кнопки - старт
+ */
 buttonStart.addEventListener('click', () => {
     const inpHour = document.getElementById('hour').value;
     const inpMin = document.getElementById('min').value;
@@ -30,6 +33,9 @@ buttonStart.addEventListener('click', () => {
     }
 });
 
+/**
+ * Реакция на нажатие стоп
+ */
 buttonEnd.addEventListener('click', (evt) => {
     evt.target.disabled = true;
     buttonStart.disabled = false;

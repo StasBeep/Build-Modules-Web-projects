@@ -7,6 +7,7 @@ export default function renderMessage(text) {
 
 // именованный экспорт
 export function renderDates(result) {
+    message.style.color = 'black';
     message.innerHTML = `
         <span>Годы: ${result.years}</span>
         <span>Месяцы: ${result.months}</span>

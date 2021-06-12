@@ -1,5 +1,18 @@
+.hidden {
+    display: none;
+}
+
+.timer {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
 .message {
     color: red;
+
     &-error {
         color: red;
         display: none;
