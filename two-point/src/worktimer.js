@@ -1,4 +1,9 @@
-import { soundPlay } from "./sound.js";
+import {
+    soundPlay,
+    soundEnd
+} from "./sound.js";
+
+let timerInt;
 /**
  * Функция для обновления таймера на странице
  * с использованием setInterval()
@@ -8,7 +13,7 @@ import { soundPlay } from "./sound.js";
  */
 export default function time(hour, minute, second) {
     // Переменная timer - нужна для остановки setInterval();
-    let timer = setInterval(() => {
+    timerInt = setInterval(() => {
         // Объект time для обновления времени
         let time = timerStart(hour, minute, second);
         // Перезаписывание времени (обновление)
@@ -20,8 +25,8 @@ export default function time(hour, minute, second) {
         // Проверка на завершение работы таймера и будет какая-то реакция
         // будет добавлена музыка;
         if (time.key) {
-            clearInterval(timer);
-            
+            clearInterval(timerInt);
+
             // ! Подключение библиотеки howler не получилось
             /*
             let sound = new Howl({
@@ -34,6 +39,11 @@ export default function time(hour, minute, second) {
             soundPlay();
         }
     }, 1000);
+}
+
+export function endtime() {
+    clearInterval(timerInt);
+    soundEnd();
 }
 
 /**

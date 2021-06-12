@@ -3,6 +3,7 @@ import {
 } from './shifting.js';
 
 import timerStart, {
+    endtime,
     outPut
 } from './worktimer.js'
 
@@ -22,10 +23,16 @@ buttonStart.addEventListener('click', () => {
     } else {
         mes.style.display = "none";
         buttonEnd.disabled = false;
-        buttonEnd.innerText = "Пауза";
         buttonStart.disabled = true;
 
         outPut(inpHour, inpMin, inpSec);
-        timerStart(inpHour, inpMin, inpSec);
+        timerStart(inpHour, inpMin, inpSec, true);
     }
+});
+
+buttonEnd.addEventListener('click', (evt) => {
+    evt.target.disabled = true;
+    buttonStart.disabled = false;
+
+    endtime();
 });
