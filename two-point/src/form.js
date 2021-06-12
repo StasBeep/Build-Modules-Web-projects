@@ -1,9 +1,13 @@
 // Дефолтный импорт (Имя выбирается самостоятельно) "Подключение именнованного и дефолтного"
 // as rend - переименование функции, если есть похожее
 // "* as |__| - импортировать всё в объект (работает через .)
-import render, {renderDates as rend} from './common.js';
+import render, {
+    renderDates
+} from './common.js';
 // Импорт нескольких элементов (Имя указывается то, которое используется в экспорте)
-import { diffDates } from './date.js';
+import {
+    diffDates
+} from './date.js';
 
 const form = document.getElementById('form-date');
 
@@ -16,7 +20,7 @@ form.addEventListener('submit', (evt) => {
     console.log(date1, date2);
 
     if (!date1 || !date2) {
-        render('Введите оба значения');
+        render('Введите даты!');
         return;
     }
 
