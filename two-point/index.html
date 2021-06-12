@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="./css/index.css">
+
     <!--Калькулятор дат-->
     <script src="./src/index.js" type="module"></script>
 </head>
@@ -30,15 +32,15 @@
         <h1>Таймер:</h1>
         <label for="hour">
             <b>Часы:</b>
-            <input type="number" min="0" placeholder="0" name="hour" id="hour">
+            <input class="number-enter" type="number" min="0" placeholder="0" name="hour" id="hour">
         </label>
         <label for="min">
             <b>Минуты:</b>
-            <input type="number" min="0" placeholder="10" name="min" id="min">
+            <input class="number-enter" type="number" min="0" placeholder="10" name="min" id="min">
         </label>
         <label for="sec">
             <b>Секунды:</b>
-            <input type="number" min="0" max="59" placeholder="0" name="sec" id="sec">
+            <input class="number-enter" type="number" min="0" max="59" placeholder="0" name="sec" id="sec">
         </label>
         <button type="button">Старт</button>
         <button type="button" disabled>Стоп</button>
@@ -47,6 +49,7 @@
             <span>Минуты: 0</span>
             <span>Секунды: 0</span>
         </p>
+        <p class="message-error">Чисел не хаватет</p>
     </section>
 
 </body>

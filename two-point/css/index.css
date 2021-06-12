@@ -1,0 +1,13 @@
+.message {
+  color: red;
+}
+
+.message-error {
+  color: red;
+  display: none;
+}
+
+.number-enter {
+  max-width: 40px;
+}
+/*# sourceMappingURL=index.css.map */
