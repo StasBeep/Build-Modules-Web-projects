@@ -1,0 +1,22 @@
+{
+  "name": "build-modules-web-projects",
+  "version": "1.0.0",
+  "description": "Инструменты сборки Web-проектов",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StasBeep/Build-Modules-Web-projects.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StasBeep/Build-Modules-Web-projects/issues"
+  },
+  "homepage": "https://github.com/StasBeep/Build-Modules-Web-projects#readme",
+  "dependencies": {
+    "luxon": "^1.27.0"
+  }
+}
