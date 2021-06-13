@@ -18,5 +18,8 @@
   "homepage": "https://github.com/StasBeep/Build-Modules-Web-projects#readme",
   "dependencies": {
     "luxon": "^1.27.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
   }
 }
