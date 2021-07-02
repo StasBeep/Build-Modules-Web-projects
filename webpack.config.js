@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// Нужен для анализа, при финальной сборке проверить на память
 const {
     BundleAnalyzerPlugin
 } = require('webpack-bundle-analyzer');
