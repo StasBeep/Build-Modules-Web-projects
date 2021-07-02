@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Нужно удалить script, при сборке-->
+
+</head>
+
+<body>
+    <nav class="menu-btn">
+        <button>Калькулятор дат</button>
+        <button>Таймер</button>
+    </nav>
+    <form id="form-date" class="hidden active">
+        <h1>Калькулятор дат:</h1>
+        <label for="date1">
+            <b>Первая дата</b>
+            <input type="date" name="date1" id="date1">
+        </label>
+        <label for="date2">
+            <b>Вторая дата</b>
+            <input type="date" name="date2" id="date2">
+        </label>
+        <button type="submit">Рассчитать промежуток</button>
+        <p class="message"></p>
+    </form>
+
+    <section class="timer">
+        <h1>Таймер:</h1>
+        <label for="hour">
+            <b>Часы:</b>
+            <input class="number-enter" type="number" min="0" placeholder="0" name="hour" id="hour">
+        </label>
+        <label for="min">
+            <b>Минуты:</b>
+            <input class="number-enter" type="number" min="0" placeholder="10" name="min" id="min">
+        </label>
+        <label for="sec">
+            <b>Секунды:</b>
+            <input class="number-enter" type="number" min="0" max="59" placeholder="0" name="sec" id="sec">
+        </label>
+        <button type="button">Старт</button>
+        <button type="button" disabled>Стоп</button>
+        <p class="duplicate">
+            <span>Часы: 0</span>
+            <span>Минуты: 0</span>
+            <span>Секунды: 0</span>
+        </p>
+        <p class="message-error">Чисел не хаватет</p>
+    </section>
+
+</body>
+
+</html>
