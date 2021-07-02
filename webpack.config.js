@@ -8,8 +8,9 @@ const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin');
 
+
 // Оптимизация
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     // Готовый продукт
@@ -28,15 +29,10 @@ module.exports = {
         port: 9000,
     },
 
+    // https://github.com/webpack-contrib/terser-webpack-plugin
     optimization: {
-        minimizer: [new UglifyJsPlugin({
-            // Файлы включения
-            include: /\/src/,
-            // Файлы исключения
-            exclude: /\/node_modules/,
-            // Распараллеливание процесса сборки (рекомендуется)
-            parallel: true, // Можно использовать число
-        })],
+        minimize: true,
+        minimizer: [new TerserPlugin()],
     },
 
     module: {
